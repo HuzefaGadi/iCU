@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "769444996602",
+    "firebase_url": "https://icu-app-887c0.firebaseio.com",
+    "project_id": "icu-app-887c0",
+    "storage_bucket": "icu-app-887c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769444996602:android:46a888da7b01c528",
+        "android_client_info": {
+          "package_name": "huzefagadi.com.icu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769444996602-i7fu8r506qhbcii1jqmim6rvm4kvjhv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyv5C6d5h84wqbQfDIc4VSc07NL4ttpKE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -81,7 +81,7 @@ public class DBHandler extends SQLiteOpenHelper {
             values.put(LATITUDE, location.getLatitude());
             values.put(LONGITUDE, location.getLongitude());
             values.put(LOCATION_TIME, location.getLocTime());
-            db.insert(TABLE_LOCATION, null, values);
+         //   db.insert(TABLE_LOCATION, null, values);
             db.replace(TABLE_LOCATION_LATEST, null, values);
             db.close();
         } catch (Exception e) {
@@ -115,7 +115,7 @@ public class DBHandler extends SQLiteOpenHelper {
                         location.setLatitude(cursor.getString(1));
                         location.setLongitude(cursor.getString(2));
                         location.setLocTime(cursor.getString(3));
-
+                        locationList.add(location);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -149,7 +149,7 @@ public class DBHandler extends SQLiteOpenHelper {
                         location.setLatitude(cursor.getString(1));
                         location.setLongitude(cursor.getString(2));
                         location.setLocTime(cursor.getString(3));
-
+                        locationList.add(location);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

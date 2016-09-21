@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Intent intentForBackground = new Intent(this, BackgroundService.class);
                 startService(intentForBackground);
             }
-            List<SingleLocation> list = dbHandler.getAllLocations(commonUtility.getValueFromPreferences(commonUtility.USERNAME));
-            for (int i = 0; i < list.size(); i++) {
-                Log.d("DATA", gson.toJson(list.get(i), SingleLocation.class));
-            }
+//            List<SingleLocation> list = dbHandler.getAllLocations(commonUtility.getValueFromPreferences(commonUtility.USERNAME));
+        //    for (int i = 0; i < list.size(); i++) {
+        //        Log.d("DATA", gson.toJson(list.get(i), SingleLocation.class));
+        //    }
 
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
@@ -124,14 +124,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void plotOnMap() {
         if (map != null) {
             try {
-                List<SingleLocation> listAllLocations = dbHandler.getAllLocations(null);
+                List<SingleLocation> listAllLocations = dbHandler.getAllLatestLocations();
+                map.clear();
                 for(int i=0;i<listAllLocations.size();i++)
                 {
                     SingleLocation singleLocation = listAllLocations.get(i);
                     map.addMarker(new MarkerOptions()
                             .position(new LatLng(Double.parseDouble(singleLocation.getLatitude()),
                                     Double.parseDouble(singleLocation.getLongitude())))
-                            .title(singleLocation.getUserName()));
+                            .title(singleLocation.getUserName())).showInfoWindow();
                 }
 
 

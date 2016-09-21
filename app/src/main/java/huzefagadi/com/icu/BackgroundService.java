@@ -210,7 +210,7 @@ public class BackgroundService extends Service implements LocationListener, Conn
                 Log.d(TAG,responseString);
                 // Parse the JSON string and return the notification key
                 JSONObject response = new JSONObject(responseString);
-                return response.getString("notification_key");
+                return response.toString();
             }
             catch(Exception e)
             {
